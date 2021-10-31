@@ -7,7 +7,7 @@ export DB_PASS="bpass"
 export DB_PORT="5432"
 export DB_NAME="bapp_db"
 export MIGRATIONS_DIR="./migrations"
-export DEBUG="true"
+export DEBUG="false"
 
 function stopDocker {
     docker stop bapp-postgres 1>/dev/null
