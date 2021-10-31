@@ -1,0 +1,21 @@
+replicas: 5
+
+image:
+  version: 5912ad5
+
+service:
+  name: my-awesome-birthday-app
+  resources:
+    limits:
+      cpu: 150m
+      memory: 150Mi
+    requests:
+      cpu: 100m
+      memory: 100Mi
+  env:
+    DB_HOST: "192.168.0.185"
+    DB_USER: "bapp"
+    DB_PORT: "5432"
+    DB_NAME: "bapp_db"
+  secret: bapp-secret
+  enableServiceMonitor: false

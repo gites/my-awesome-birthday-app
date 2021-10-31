@@ -1,0 +1,28 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.service.name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    appname: {{ .Values.service.name }}
+spec:
+  selector:
+    appname: {{ .Values.service.name }}
+  ports:
+  - name: http
+    port: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.service.name }}-metrics
+  namespace: {{ .Release.Namespace }}
+  labels:
+    appname: {{ .Values.service.name }}
+spec:
+  selector:
+    appname: {{ .Values.service.name }}
+  ports:
+  - name: metrics
+    port: 9090
